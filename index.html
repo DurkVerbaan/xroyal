@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="X Royal Barbershop Bedum — vakmanschap, stijl en persoonlijke aandacht." />
+  <title>X Royal Barbershop</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="config.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <a href="#hero" class="nav-logo">
+      <img src="img/logo.png" alt="X Royal Barbershop logo" class="logo-img" />
+    </a>
+    <button class="nav-toggle" aria-label="Menu openen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <a href="#voordelen">Over ons</a>
+      <a href="#diensten">Tarieven</a>
+      <a href="#contact">Contact</a>
+      <a href="#" class="nav-cta" id="nav-cta-link">Afspraak maken</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-label">— Bedum</p>
+      <h1 id="hero-titel"></h1>
+      <p class="hero-subtitel" id="hero-subtitel"></p>
+      <a href="#" class="btn-primary" id="hero-cta"></a>
+    </div>
+    <div class="hero-foto">
+      <div class="foto-placeholder">FOTO: sfeervolle buitenkant of interieur barbershop</div>
+    </div>
+  </section>
+
+  <!-- VOORDELEN -->
+  <section class="voordelen" id="voordelen">
+    <div class="sectie-wrapper">
+      <h2 class="sectie-titel">Waarom X Royal?</h2>
+      <div class="voordelen-grid" id="voordelen-grid"></div>
+    </div>
+  </section>
+
+  <!-- DIENSTEN -->
+  <section class="diensten" id="diensten">
+    <div class="sectie-wrapper">
+      <h2 class="sectie-titel">Tarieven</h2>
+
+      <div class="tarief-tabs">
+        <button class="tab-btn actief" data-tab="Heren">Heren</button>
+        <button class="tab-btn" data-tab="Kinderen">Kinderen</button>
+      </div>
+
+      <table class="tarieven-tabel">
+        <tbody id="tarieven-body"></tbody>
+      </table>
+
+      <p class="tarieven-note">Online afspraken via ons boekingssysteem. <a href="#" id="tarieven-cta-link">Maak direct een afspraak →</a></p>
+    </div>
+  </section>
+
+  <!-- OVER ONS -->
+  <section class="over-ons" id="over-ons">
+    <div class="sectie-wrapper over-ons-grid">
+      <div class="over-ons-tekst">
+        <h2 class="sectie-titel links">Over ons</h2>
+        <p id="over-ons-tekst"></p>
+        <a href="#" class="btn-primary" id="over-ons-cta">Maak een afspraak</a>
+      </div>
+      <div class="over-ons-foto">
+        <div class="foto-placeholder">FOTO: interieur of team barbershop</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="sectie-wrapper contact-grid">
+
+      <div class="contact-info">
+        <h2 class="sectie-titel links">Contact</h2>
+        <p id="contact-adres"></p>
+        <a href="#" class="contact-tel" id="contact-tel"></a>
+        <a href="#" class="btn-primary" id="contact-cta">Afspraak maken</a>
+        <div class="social-links">
+          <a href="#" id="instagram-link" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+
+      <div class="openingstijden">
+        <h3>Openingstijden</h3>
+        <ul id="openingstijden-lijst"></ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p id="footer-naam"></p>
+    <p id="footer-kvk"></p>
+    <p>© <span id="footer-jaar"></span> X Royal Barbershop — Alle rechten voorbehouden</p>
+  </footer>
+
+</body>
+</html>

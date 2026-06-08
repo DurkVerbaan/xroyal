@@ -1,0 +1,528 @@
+/* ===========================
+   X Royal Barbershop — Styles
+   Thema: Zwart & Goud / Luxe
+   =========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500&display=swap');
+
+:root {
+  --goud: #c9a84c;
+  --goud-licht: #e2c47a;
+  --goud-donker: #9a7530;
+  --zwart: #0a0a0a;
+  --zwart-zacht: #141414;
+  --zwart-card: #1a1a1a;
+  --wit: #ffffff;
+  --grijs: #888888;
+  --grijs-lijn: #2a2a2a;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Jost', sans-serif;
+  --radius: 4px;
+  --max-width: 1100px;
+}
+
+/* RESET */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--zwart);
+  color: var(--wit);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+/* ===========================
+   TYPOGRAFIE
+   =========================== */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.sectie-titel {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--goud);
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 0.02em;
+}
+
+.sectie-titel.links { text-align: left; }
+
+/* ===========================
+   KNOPPEN
+   =========================== */
+.btn-primary {
+  display: inline-block;
+  background: var(--goud);
+  color: var(--zwart);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 14px 36px;
+  border-radius: var(--radius);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: var(--goud-licht);
+  transform: translateY(-1px);
+}
+
+/* ===========================
+   NAVIGATIE
+   =========================== */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--grijs-lijn);
+}
+
+.logo-img {
+  height: 52px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.nav-links a {
+  color: var(--grijs);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--goud); }
+
+.nav-cta {
+  background: var(--goud) !important;
+  color: var(--zwart) !important;
+  padding: 10px 22px;
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: background 0.2s ease !important;
+}
+.nav-cta:hover { background: var(--goud-licht) !important; }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--goud);
+  transition: all 0.3s ease;
+}
+
+/* ===========================
+   HERO
+   =========================== */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  padding-top: 92px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10,10,10,0.97) 45%, rgba(10,10,10,0.6) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px 80px 60px;
+}
+
+.hero-label {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--goud);
+  margin-bottom: 16px;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  color: var(--wit);
+  margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+  color: var(--goud);
+}
+
+.hero-subtitel {
+  font-size: 1.05rem;
+  color: #aaaaaa;
+  max-width: 480px;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.hero-foto {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: stretch;
+}
+
+.foto-placeholder {
+  width: 100%;
+  background: var(--zwart-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--grijs);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  border-left: 1px solid var(--grijs-lijn);
+  padding: 24px;
+  min-height: 300px;
+}
+
+/* ===========================
+   SECTIE WRAPPER
+   =========================== */
+.sectie-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 100px 40px;
+}
+
+/* ===========================
+   VOORDELEN
+   =========================== */
+.voordelen {
+  border-top: 1px solid var(--grijs-lijn);
+  border-bottom: 1px solid var(--grijs-lijn);
+}
+
+.voordelen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.voordeel-item {
+  border-top: 1px solid var(--goud-donker);
+  padding-top: 28px;
+}
+
+.voordeel-icoon {
+  color: var(--goud);
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.voordeel-item h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--wit);
+  margin-bottom: 10px;
+}
+
+.voordeel-item p {
+  font-size: 0.92rem;
+  color: #999999;
+  line-height: 1.8;
+}
+
+/* ===========================
+   DIENSTEN / TARIEVEN
+   =========================== */
+.diensten {
+  background: var(--zwart-zacht);
+}
+
+.tarief-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.tab-btn {
+  background: none;
+  border: 1px solid var(--grijs-lijn);
+  color: var(--grijs);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 28px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.tab-btn:hover,
+.tab-btn.actief {
+  border-color: var(--goud);
+  color: var(--goud);
+  background: rgba(201, 168, 76, 0.06);
+}
+
+.tarieven-tabel {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tarieven-tabel tr {
+  border-bottom: 1px solid var(--grijs-lijn);
+}
+
+.tarieven-tabel tr:first-child {
+  border-top: 1px solid var(--grijs-lijn);
+}
+
+.tarieven-tabel td {
+  padding: 18px 0;
+  font-size: 0.95rem;
+}
+
+.tarieven-tabel td:first-child {
+  color: #dddddd;
+}
+
+.tarieven-tabel td:last-child {
+  text-align: right;
+  color: var(--goud);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.tarieven-note {
+  margin-top: 32px;
+  font-size: 0.85rem;
+  color: var(--grijs);
+}
+.tarieven-note a {
+  color: var(--goud);
+  transition: color 0.2s;
+}
+.tarieven-note a:hover { color: var(--goud-licht); }
+
+/* ===========================
+   OVER ONS
+   =========================== */
+.over-ons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.over-ons-tekst p {
+  color: #aaaaaa;
+  font-size: 1rem;
+  line-height: 1.9;
+  margin-bottom: 36px;
+}
+
+.over-ons-foto .foto-placeholder {
+  min-height: 440px;
+  border: 1px solid var(--grijs-lijn);
+  border-radius: var(--radius);
+}
+
+/* ===========================
+   CONTACT
+   =========================== */
+.contact {
+  background: var(--zwart-zacht);
+  border-top: 1px solid var(--grijs-lijn);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.contact-info p {
+  color: #aaaaaa;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+}
+
+.contact-tel {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--goud);
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+.contact-tel:hover { color: var(--goud-licht); }
+
+.social-links {
+  margin-top: 28px;
+  display: flex;
+  gap: 20px;
+}
+.social-links a {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grijs);
+  border-bottom: 1px solid var(--grijs-lijn);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.social-links a:hover {
+  color: var(--goud);
+  border-color: var(--goud);
+}
+
+.openingstijden {
+  padding-top: 8px;
+}
+
+.openingstijden h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--goud);
+  margin-bottom: 28px;
+  font-weight: 600;
+}
+
+.openingstijden ul {
+  list-style: none;
+}
+
+.openingstijden li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--grijs-lijn);
+  font-size: 0.9rem;
+}
+
+.openingstijden li span.dag {
+  color: #bbbbbb;
+}
+
+.openingstijden li span.tijd {
+  color: var(--wit);
+}
+
+.openingstijden li.gesloten span.tijd {
+  color: var(--grijs);
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+.footer {
+  border-top: 1px solid var(--grijs-lijn);
+  padding: 40px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: #555555;
+  line-height: 2;
+}
+
+/* ===========================
+   DECORATIEVE LIJN
+   =========================== */
+.goud-lijn {
+  width: 48px;
+  height: 2px;
+  background: var(--goud);
+  margin-bottom: 20px;
+}
+.goud-lijn.center { margin: 0 auto 20px; }
+
+/* ===========================
+   RESPONSIVE — TABLET
+   =========================== */
+@media (max-width: 900px) {
+  .nav { padding: 18px 24px; }
+  .nav-links { gap: 20px; }
+
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-content { padding: 80px 24px 60px; }
+  .hero-foto { min-height: 280px; }
+  .hero-foto .foto-placeholder { border-left: none; border-top: 1px solid var(--grijs-lijn); }
+
+  .voordelen-grid { grid-template-columns: 1fr; gap: 32px; }
+
+  .sectie-wrapper { padding: 80px 24px; }
+
+  .over-ons-grid,
+  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
+/* ===========================
+   RESPONSIVE — MOBIEL
+   =========================== */
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: var(--zwart);
+    border-top: 1px solid var(--grijs-lijn);
+    padding: 16px 0;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links a {
+    padding: 14px 24px;
+    font-size: 0.9rem;
+    width: 100%;
+    border-bottom: 1px solid var(--grijs-lijn);
+  }
+
+  .nav-cta {
+    border-radius: 0 !important;
+    text-align: center;
+  }
+
+  .nav-toggle { display: flex; }
+
+  .sectie-titel { font-size: 1.8rem; margin-bottom: 2rem; }
+
+  .tarieven-tabel td:first-child { font-size: 0.85rem; padding-right: 16px; }
+}
