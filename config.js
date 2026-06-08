@@ -12,50 +12,47 @@ const websiteContent = {
   // ── Hero ──────────────────────────────────────────────
   heroTitel:    "Vakmanschap dat je ziet.",
   heroSubtitel: "Knippen, scheren en baardverzorging in Bedum — door een kapper die weet wat hij doet.",
-  ctaKnopTekst: "Afspraak maken",
 
   // ── Voordelen ─────────────────────────────────────────
   voordelen: [
-    {
-      icoon: "✦",
-      titel: "Strak resultaat",
-      tekst: "Van moderne fade tot klassieke coupe — altijd afgestemd op jouw gezichtsvorm en stijl."
-    },
-    {
-      icoon: "✦",
-      titel: "Alles onder één dak",
-      tekst: "Haar, baard, epileren, facial steam, scrub & masker. Volledige verzorging in één bezoek."
-    },
-    {
-      icoon: "✦",
-      titel: "Welkom gevoel",
-      tekst: "Je wordt ontvangen met een kop koffie en persoonlijk advies. Geen haast, wel resultaat."
-    }
+    { icoon: "✦", titel: "Strak resultaat",      tekst: "Van moderne fade tot klassieke coupe — altijd afgestemd op jouw gezichtsvorm en stijl." },
+    { icoon: "✦", titel: "Alles onder één dak",  tekst: "Haar, baard, epileren, facial steam, scrub & masker. Volledige verzorging in één bezoek." },
+    { icoon: "✦", titel: "Welkom gevoel",         tekst: "Je wordt ontvangen met een kop koffie en persoonlijk advies. Geen haast, wel resultaat." }
   ],
 
   // ── Diensten & tarieven ───────────────────────────────
   diensten: [
-    // Heren
-    { categorie: "Heren", naam: "Knippen",                                                         prijs: "€ 28,50" },
-    { categorie: "Heren", naam: "Knippen & baard contour",                                         prijs: "€ 30,00" },
-    { categorie: "Heren", naam: "Knippen & baard (full)",                                          prijs: "€ 41,00" },
-    { categorie: "Heren", naam: "Knippen & Italian shave",                                         prijs: "€ 42,00" },
-    { categorie: "Heren", naam: "Knippen & epileren met touw",                                     prijs: "€ 40,00" },
-    { categorie: "Heren", naam: "Knippen & stoom, scrub & masker",                                 prijs: "€ 48,00" },
-    { categorie: "Heren", naam: "VIP — haar, baard, epileren & luxe gezichtsbehandeling",          prijs: "€ 65,00" },
-    // Kinderen
-    { categorie: "Kinderen", naam: "Stoere kapsels voor jongens — selecteer in de boekingstool",   prijs: "Zie boekingstool" }
+    { categorie: "Heren",     naam: "Knippen",                                                       prijs: "€ 28,50", vip: false },
+    { categorie: "Heren",     naam: "Knippen & baard contour",                                       prijs: "€ 30,00", vip: false },
+    { categorie: "Heren",     naam: "Knippen & baard (full)",                                        prijs: "€ 41,00", vip: false },
+    { categorie: "Heren",     naam: "Knippen & Italian shave",                                       prijs: "€ 42,00", vip: false },
+    { categorie: "Heren",     naam: "Knippen & epileren met touw",                                   prijs: "€ 40,00", vip: false },
+    { categorie: "Heren",     naam: "Knippen & stoom, scrub & masker",                               prijs: "€ 48,00", vip: false },
+    { categorie: "Heren",     naam: "VIP — haar, baard, epileren & luxe gezichtsbehandeling",        prijs: "€ 65,00", vip: true  },
+    { categorie: "Kinderen",  naam: "Stoere kapsels voor jongens — selecteer in de boekingstool",    prijs: "Zie boekingstool", vip: false }
+  ],
+
+  // ── Lookbook ──────────────────────────────────────────
+  lookbook: [
+    { bestand: "images/lookbook-1.jpg", label: "Fade & baard" },
+    { bestand: "images/lookbook-2.jpg", label: "Classic taper" },
+    { bestand: "images/lookbook-3.jpg", label: "Italian shave" },
+    { bestand: "images/lookbook-4.jpg", label: "Skin fade" },
+    { bestand: "images/lookbook-5.jpg", label: "Baard contour" },
+    { bestand: "images/lookbook-6.jpg", label: "VIP behandeling" },
+    { bestand: "images/lookbook-7.jpg", label: "Modern coupe" },
+    { bestand: "images/lookbook-8.jpg", label: "Baard & haar" }
   ],
 
   // ── Openingstijden ────────────────────────────────────
   openingstijden: [
-    { dag: "Maandag",   tijd: "12:00 – 18:00",  label: "" },
-    { dag: "Dinsdag",   tijd: "09:30 – 18:00",  label: "" },
-    { dag: "Woensdag",  tijd: "09:30 – 18:00",  label: "" },
-    { dag: "Donderdag", tijd: "09:30 – 20:00",  label: "Koopavond" },
-    { dag: "Vrijdag",   tijd: "09:30 – 20:00",  label: "Koopavond" },
-    { dag: "Zaterdag",  tijd: "09:00 – 16:00",  label: "" },
-    { dag: "Zondag",    tijd: "Gesloten",        label: "" }
+    { dag: "Maandag",   tijd: "12:00 – 18:00" },
+    { dag: "Dinsdag",   tijd: "09:30 – 18:00" },
+    { dag: "Woensdag",  tijd: "09:30 – 18:00" },
+    { dag: "Donderdag", tijd: "09:30 – 20:00" },
+    { dag: "Vrijdag",   tijd: "09:30 – 20:00" },
+    { dag: "Zaterdag",  tijd: "09:00 – 16:00" },
+    { dag: "Zondag",    tijd: "Gesloten" }
   ],
 
   // ── Over ons ──────────────────────────────────────────
@@ -71,7 +68,6 @@ const websiteContent = {
     },
     {
       naam:    "Harry",
-      badge:   "Local Guide",
       sterren: 5,
       tekst:   "Vanmorgen voor het eerst geweest. Hartelijk ontvangen door Ahmad. Neemt alle tijd voor je en geeft goed advies. En natuurlijk zeer blij met het resultaat. Jullie hebben er weer een klant bij 👍",
       datum:   "7 maanden geleden"
@@ -84,7 +80,6 @@ const websiteContent = {
     }
   ],
 
-  // ── Google reviews link ───────────────────────────────
   googleReviewsLink: "https://www.google.com/maps/place/X+Royal+Barbershop"
 
 };
