@@ -3,7 +3,7 @@ const websiteContent = {
   telefoonnummer: "050 - 211 3546",
   boekingslink: "https://xroyalbarbershop.salonized.com/bookings/new",
   heroTitel: "X Royal Barbershop",
-  heroSubtitel: "Vakmanschap, stijl en persoonlijke aandacht — in het hart van Bedum.",
+  heroSubtitel: "Vakmanschap test, stijl en persoonlijke aandacht — in het hart van Bedum.",
   ctaKnopTekst: "Maak een afspraak",
   ctaKnopLink: "https://xroyalbarbershop.salonized.com/bookings/new",
 
