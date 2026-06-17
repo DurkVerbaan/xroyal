@@ -401,6 +401,12 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
    ═══════════════════════════════════════════ */
 .lookbook { border-top: 1px solid var(--lijn); }
 
+.lookbook-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
 .lookbook-item {
   aspect-ratio: 3/4;
   background: var(--zwart-card);
