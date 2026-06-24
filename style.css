@@ -291,7 +291,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 }
 .voordelen .wrapper { padding-top: 60px; padding-bottom: 60px; }
 
-.voordelen-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.voordelen-grid { display: grid; grid-template-columns: repeat(3, 1fr); align-items: center;
+    text-align: center;}
 
 .voordeel-item {
   padding: 32px 32px 32px 0;
