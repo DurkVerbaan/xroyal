@@ -34,14 +34,14 @@ const websiteContent = {
 
   // ── Lookbook ──────────────────────────────────────────
   lookbook: [
-    { bestand: "images/lookbook-1.jpg", label: "Fade & baard" },
-    { bestand: "images/lookbook-2.jpg", label: "Classic taper" },
-    { bestand: "images/lookbook-3.jpg", label: "Italian shave" },
-    { bestand: "images/lookbook-4.jpg", label: "Skin fade" },
-    { bestand: "images/lookbook-5.jpg", label: "Baard contour" },
-    { bestand: "images/lookbook-6.jpg", label: "VIP behandeling" },
-    { bestand: "images/lookbook-7.jpg", label: "Modern coupe" },
-    { bestand: "images/lookbook-8.jpg", label: "Baard & haar" }
+    { bestand: "images/lookbook-1.jpg", label: "" },
+    { bestand: "images/lookbook-2.jpg", label: "" },
+    { bestand: "images/lookbook-3.jpg", label: "" },
+    { bestand: "images/lookbook-4.jpg", label: "" },
+    { bestand: "images/lookbook-5.jpg", label: "" },
+    { bestand: "images/lookbook-6.jpg", label: "" },
+    { bestand: "images/lookbook-7.jpg", label: "" },
+    { bestand: "images/lookbook-8.jpg", label: "" }
   ],
 
   // ── Openingstijden ────────────────────────────────────
