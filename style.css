@@ -129,7 +129,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 .nav.scrolled { box-shadow: 0 4px 32px rgba(0,0,0,0.5); }
 
 .logo-img       { height: 40px; width: auto; }
-.logo-img.small { height: 32px; }
+.logo-img.small { height: 100px; }
 
 .nav-links {
   display: flex;
@@ -188,12 +188,13 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   object-fit: cover;
   object-position: center;
   opacity: 0.4;
+  transform: scaleX(-1);
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to right, rgba(10,10,10,0.97) 45%, rgba(10,10,10,0.4) 100%);
+  background: linear-gradient(to right, rgba(10,10,10,0.97) 10%, rgba(10,10,10,0.4) 100%);
 }
 
 .hero-content {
@@ -290,7 +291,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 }
 .voordelen .wrapper { padding-top: 60px; padding-bottom: 60px; }
 
-.voordelen-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.voordelen-grid { display: grid; grid-template-columns: repeat(3, 1fr); align-items: center;
+    text-align: center;}
 
 .voordeel-item {
   padding: 32px 32px 32px 0;
@@ -320,7 +322,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   background: var(--zwart-card);
   border: 1px solid var(--lijn);
 }
-.over-ons-foto img { width: 100%; height: 100%; object-fit: cover; }
+.over-ons-foto img { width: 100%; height: 125%; object-fit: cover; }
 .foto-fallback {
   position: absolute;
   inset: 0;
@@ -365,7 +367,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 .tarieven-tabel tr:hover { background: rgba(255,255,255,0.02); }
 .tarieven-tabel tr:first-child { border-top: 1px solid var(--lijn); }
 .tarieven-tabel td { padding: 16px 0; font-size: 0.88rem; vertical-align: middle; }
-.tarieven-tabel td:first-child { color: #cccccc; }
+.tarieven-tabel td:first-child { color: #cccccc; padding-left: 20px;}
 .tarieven-tabel td.prijs {
   text-align: right;
   color: var(--goud);
@@ -374,6 +376,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   font-weight: 600;
   white-space: nowrap;
   padding-left: 20px;
+  padding-right: 20px;
 }
 
 .vip-row { background: rgba(201,168,76,0.05) !important; border-top: 1px solid rgba(201,168,76,0.2) !important; border-bottom: 1px solid rgba(201,168,76,0.2) !important; }
@@ -580,9 +583,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 }
 .sticky-btn {
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  text-align: center;
   font-family: var(--font-body);
   font-size: 0.78rem;
   font-weight: 500;
@@ -641,23 +643,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   .lookbook-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   .reviews-grid  { grid-template-columns: 1fr; }
 
-  .contact-knoppen {
-    flex-direction: column;
-    align-items: stretch;
-  }
+  .contact-knoppen { flex-direction: column; align-items: stretch; }
   .contact-knoppen .btn-primary { text-align: center; order: 2; }
-  .contact-knoppen .social-ig   { order: 1; }
-  .contact-knoppen > :not(.btn-primary) {
-    display: flex;
-    flex: 1;
-  }
-
-  /* Social links naast elkaar op één rij */
-  .contact-sociaal-rij {
-    display: flex;
-    gap: 10px;
-    order: 1;
-  }
+  .contact-sociaal-rij { display: flex; gap: 10px; order: 1; }
   .contact-knoppen .social-ig {
     flex: 1;
     justify-content: center;
@@ -667,6 +655,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   }
 
   .scroll-hint { display: flex; }
+
   .footer { padding-bottom: 96px; }
   .sticky-cta { display: flex; }
 }
