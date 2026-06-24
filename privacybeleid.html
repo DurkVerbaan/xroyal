@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacybeleid — X Royal Barbershop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --goud: #c9a84c; --goud-licht: #dfc278; --goud-donker: #9a7530;
+      --goud-dim: rgba(201,168,76,0.1);
+      --zwart: #0a0a0a; --zwart-zacht: #111111; --zwart-card: #181818;
+      --wit: #ffffff; --grijs: #777777; --grijs-licht: #aaaaaa; --lijn: #222222;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Jost', sans-serif;
+      --radius: 4px; --max: 800px; --nav-h: 64px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--zwart); color: var(--wit); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+    a { color: var(--goud); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--goud-licht); }
+
+    /* NAV */
+    .nav { position: sticky; top: 0; z-index: 100; height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; padding: 0 32px; background: rgba(10,10,10,0.97); border-bottom: 1px solid var(--lijn); backdrop-filter: blur(10px); }
+    .nav-logo { font-family: var(--font-display); font-size: 1.1rem; color: var(--goud); font-weight: 600; letter-spacing: 0.05em; }
+    .nav-logo img { height: 40px; width: auto; }
+    .nav-terug { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grijs); display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+    .nav-terug:hover { color: var(--goud); }
+
+    /* HERO BANNER */
+    .page-hero { border-bottom: 1px solid var(--lijn); padding: 64px 32px 56px; text-align: center; background: var(--zwart-zacht); }
+    .page-hero .label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--goud); display: block; margin-bottom: 12px; }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); color: var(--wit); font-weight: 600; margin-bottom: 12px; }
+    .page-hero .datum { font-size: 0.78rem; color: var(--grijs); }
+
+    /* CONTENT */
+    .content { max-width: var(--max); margin: 0 auto; padding: 64px 32px 100px; }
+
+    .artikel { margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--lijn); }
+    .artikel:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .artikel-nummer { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--goud); display: block; margin-bottom: 8px; }
+    .artikel h2 { font-family: var(--font-display); font-size: 1.6rem; color: var(--wit); font-weight: 600; margin-bottom: 20px; }
+    .artikel p { color: var(--grijs-licht); margin-bottom: 14px; font-size: 0.93rem; }
+    .artikel p:last-child { margin-bottom: 0; }
+    .artikel ul { list-style: none; margin: 14px 0; display: flex; flex-direction: column; gap: 8px; }
+    .artikel ul li { padding-left: 18px; position: relative; color: var(--grijs-licht); font-size: 0.93rem; }
+    .artikel ul li::before { content: "—"; position: absolute; left: 0; color: var(--goud); }
+
+    /* HIGHLIGHT BOX */
+    .highlight { background: var(--zwart-card); border: 1px solid var(--goud-donker); border-radius: var(--radius); padding: 20px 24px; margin: 20px 0; }
+    .highlight p { color: var(--grijs-licht); font-size: 0.88rem; margin: 0; }
+    .highlight strong { color: var(--goud-licht); }
+
+    /* CONTACT KAART */
+    .contact-kaart { background: var(--zwart-card); border: 1px solid var(--lijn); border-radius: var(--radius); padding: 28px 32px; margin-top: 20px; }
+    .contact-kaart p { color: var(--grijs-licht); font-size: 0.9rem; margin-bottom: 6px; }
+    .contact-kaart strong { color: var(--wit); }
+
+    /* FOOTER */
+    .footer { border-top: 1px solid var(--lijn); padding: 32px; text-align: center; font-size: 0.72rem; color: var(--grijs); line-height: 2; }
+
+    @media (max-width: 600px) {
+      .nav { padding: 0 20px; }
+      .content { padding: 48px 20px 80px; }
+      .page-hero { padding: 48px 20px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="X Royal Barbershop" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+    <span style="display:none">X Royal Barbershop</span>
+  </a>
+  <a href="index.html" class="nav-terug">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 5-7 7 7 7"/></svg>
+    Terug naar de website
+  </a>
+</header>
+
+<div class="page-hero">
+  <span class="label">Juridisch</span>
+  <h1>Privacybeleid</h1>
+  <p class="datum">Versie 1.0 — Laatst bijgewerkt: juni 2025</p>
+</div>
+
+<div class="content">
+
+  <!-- 1. WIE WIJ ZIJN -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 1</span>
+    <h2>Wie zijn wij?</h2>
+    <p>Dit privacybeleid is opgesteld door en geldt voor:</p>
+    <div class="contact-kaart">
+      <p><strong>X Royal Barbershop</strong></p>
+      <p>Stationsweg 24, 9781 CH Bedum</p>
+      <p>KvK-nummer: <strong>INVULLEN_KVK</strong></p>
+      <p>E-mailadres: <strong>xroyalbarbershop@gmail.com</strong></p>
+      <p>Telefoon: <strong>050 - 211 3546</strong></p>
+    </div>
+    <p style="margin-top:16px">Wij zijn verantwoordelijk voor de verwerking van jouw persoonsgegevens zoals beschreven in dit beleid. Wij houden ons aan de Algemene Verordening Gegevensbescherming (AVG / GDPR).</p>
+  </div>
+
+  <!-- 2. WELKE GEGEVENS -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 2</span>
+    <h2>Welke gegevens verwerken wij?</h2>
+    <p>Wij verwerken alleen gegevens die nodig zijn voor het uitvoeren van onze diensten. Het gaat om de volgende categorieën:</p>
+    <ul>
+      <li><strong>Contactgegevens:</strong> naam, telefoonnummer en e-mailadres — voor het plannen en bevestigen van afspraken.</li>
+      <li><strong>Afspraakgegevens:</strong> datum, tijd en gekozen behandeling — voor het bijhouden van jouw bezoekhistorie.</li>
+      <li><strong>Betalingsgegevens:</strong> betaalmethode en bedrag — verwerkt via ons kassasysteem (Salonhub). Wij slaan geen volledige betaalkaartgegevens op.</li>
+      <li><strong>Foto's:</strong> sfeer- en resultaatfoto's voor social media (Instagram/TikTok) — alleen met jouw uitdrukkelijke mondelinge of schriftelijke toestemming.</li>
+      <li><strong>Camerabeelden:</strong> beveiligingscamerabeelden van het interieur — uitsluitend voor de veiligheid van medewerkers en klanten.</li>
+    </ul>
+    <div class="highlight">
+      <p><strong>Gevoelige gegevens:</strong> Wij verwerken geen bijzondere persoonsgegevens zoals gezondheids- of religiegegevens.</p>
+    </div>
+  </div>
+
+  <!-- 3. WAAROM -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 3</span>
+    <h2>Waarom gebruiken wij jouw gegevens?</h2>
+    <p>Wij verwerken jouw gegevens op basis van de volgende wettelijke grondslagen:</p>
+    <ul>
+      <li><strong>Uitvoering van de overeenkomst:</strong> om jouw afspraak te plannen, te bevestigen en uit te voeren.</li>
+      <li><strong>Wettelijke verplichting:</strong> voor onze boekhouding en fiscale bewaarplicht (7 jaar).</li>
+      <li><strong>Gerechtvaardigd belang:</strong> voor de beveiliging van ons pand via cameratoezicht.</li>
+      <li><strong>Toestemming:</strong> voor het plaatsen van foto's op social media en het sturen van marketing-e-mails.</li>
+    </ul>
+  </div>
+
+  <!-- 4. SALONHUB -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 4</span>
+    <h2>Gebruik van Salonhub (boekingssysteem)</h2>
+    <p>Wij maken gebruik van <strong>Salonhub</strong> als online boekings- en beheersysteem. Salonhub verwerkt als verwerker persoonsgegevens namens ons. Salonhub is gehouden aan de AVG en heeft passende beveiligingsmaatregelen getroffen.</p>
+    <p>Salonhub kan de volgende communicatie namens ons verzenden:</p>
+    <ul>
+      <li>Afspraakbevestigingen en -herinneringen per e-mail of SMS.</li>
+      <li>Verjaardagsmails (indien ingeschakeld en met jouw toestemming).</li>
+      <li>Uitnodigingen om een review achter te laten (indien ingeschakeld).</li>
+    </ul>
+    <p>Het volledige privacyreglement van Salonhub is te raadplegen via: <a href="https://salonhub.nl/privacy/index.html#online" target="_blank" rel="noopener">salonhub.nl/privacy</a></p>
+  </div>
+
+  <!-- 5. CAMERATOEZICHT -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 5</span>
+    <h2>Cameratoezicht (CCTV)</h2>
+    <p>In en/of rondom onze salon is een beveiligingscamera aanwezig. Dit cameratoezicht dient uitsluitend ter beveiliging van medewerkers, klanten en eigendommen.</p>
+    <div class="highlight">
+      <p><strong>Bewaartermijn:</strong> Camerabeelden worden maximaal <strong>4 weken</strong> bewaard, waarna ze automatisch worden overschreven. Beelden worden alleen gedeeld met de politie of justitie bij een aantoonbaar incident.</p>
+    </div>
+    <p>De aanwezigheid van de camera is zichtbaar aangegeven via een sticker bij de ingang van de salon.</p>
+  </div>
+
+  <!-- 6. FOTO'S SOCIAL MEDIA -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 6</span>
+    <h2>Foto's op social media</h2>
+    <p>Wij plaatsen regelmatig resultaatfoto's van kapsels en behandelingen op onze Instagram- en TikTok-pagina's. Wij vragen hiervoor <strong>altijd vooraf jouw toestemming</strong>.</p>
+    <ul>
+      <li>Toestemming wordt mondeling gevraagd, direct na de behandeling.</li>
+      <li>Je kunt jouw toestemming op elk moment intrekken door contact met ons op te nemen.</li>
+      <li>Na intrekking verwijderen wij de betreffende foto('s) zo snel als redelijkerwijs mogelijk.</li>
+    </ul>
+  </div>
+
+  <!-- 7. BEWAARTERMIJNEN -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 7</span>
+    <h2>Hoe lang bewaren wij jouw gegevens?</h2>
+    <ul>
+      <li><strong>Klantgegevens en afspraakhistorie:</strong> zolang je actieve klant bent, plus 2 jaar daarna.</li>
+      <li><strong>Financiële administratie:</strong> 7 jaar (wettelijke bewaarplicht Belastingdienst).</li>
+      <li><strong>Camerabeelden:</strong> maximaal 4 weken.</li>
+      <li><strong>Marketing-e-mails:</strong> totdat je je uitschrijft of toestemming intrekt.</li>
+    </ul>
+  </div>
+
+  <!-- 8. RECHTEN -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 8</span>
+    <h2>Jouw rechten</h2>
+    <p>Op grond van de AVG heb je de volgende rechten:</p>
+    <ul>
+      <li><strong>Inzage:</strong> je mag opvragen welke gegevens wij van jou hebben.</li>
+      <li><strong>Correctie:</strong> je mag onjuiste gegevens laten aanpassen.</li>
+      <li><strong>Verwijdering:</strong> je mag vragen om verwijdering van jouw gegevens ("recht om vergeten te worden").</li>
+      <li><strong>Beperking:</strong> je mag de verwerking van jouw gegevens laten beperken.</li>
+      <li><strong>Bezwaar:</strong> je mag bezwaar maken tegen verwerking op basis van gerechtvaardigd belang.</li>
+      <li><strong>Overdraagbaarheid:</strong> je mag jouw gegevens opvragen in een leesbaar digitaal formaat.</li>
+    </ul>
+    <p>Een verzoek indienen kan via <a href="mailto:xroyalbarbershop@gmail.com">xroyalbarbershop@gmail.com</a>. Wij reageren binnen <strong>4 weken</strong>.</p>
+    <div class="highlight">
+      <p>Ben je het niet eens met hoe wij omgaan met jouw gegevens? Dan kun je een klacht indienen bij de <strong>Autoriteit Persoonsgegevens</strong> via <a href="https://www.autoriteitpersoonsgegevens.nl" target="_blank" rel="noopener">autoriteitpersoonsgegevens.nl</a>.</p>
+    </div>
+  </div>
+
+  <!-- 9. BEVEILIGING -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 9</span>
+    <h2>Beveiliging van jouw gegevens</h2>
+    <p>Wij nemen de bescherming van jouw gegevens serieus. Onze maatregelen:</p>
+    <ul>
+      <li>Toegang tot klantgegevens is beperkt tot de eigenaar en direct betrokken medewerkers.</li>
+      <li>Onze website maakt gebruik van een beveiligde HTTPS-verbinding (SSL-certificaat).</li>
+      <li>Salonhub versleutelt alle klantgegevens conform de actuele beveiligingsnormen.</li>
+    </ul>
+  </div>
+
+  <!-- 10. COOKIES -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 10</span>
+    <h2>Cookies</h2>
+    <p>Onze website maakt gebruik van functionele cookies die nodig zijn voor het correct functioneren van de website (zoals het boekingswidget van Salonhub). Wij plaatsen geen trackingcookies of advertentiecookies zonder jouw toestemming.</p>
+    <p>Meer informatie over cookies en hoe je ze kunt beheren vind je in de instellingen van jouw browser.</p>
+  </div>
+
+  <!-- 11. WIJZIGINGEN -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 11</span>
+    <h2>Wijzigingen in dit beleid</h2>
+    <p>Wij behouden het recht om dit privacybeleid te wijzigen. Bij ingrijpende wijzigingen informeren wij jou via e-mail of een prominente melding op onze website. De meest actuele versie is altijd beschikbaar op <a href="privacybeleid.html">onze website</a>.</p>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <p>© 2025 X Royal Barbershop — Stationsweg 24, 9781 CH Bedum</p>
+  <p style="margin-top:8px">
+    <a href="index.html">Home</a> &nbsp;·&nbsp;
+    <a href="algemene-voorwaarden.html">Algemene Voorwaarden</a> &nbsp;·&nbsp;
+    <a href="privacybeleid.html">Privacybeleid</a>
+  </p>
+</footer>
+
+</body>
+</html>

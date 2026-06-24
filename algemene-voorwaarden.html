@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Algemene Voorwaarden — X Royal Barbershop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --goud: #c9a84c; --goud-licht: #dfc278; --goud-donker: #9a7530;
+      --goud-dim: rgba(201,168,76,0.1);
+      --zwart: #0a0a0a; --zwart-zacht: #111111; --zwart-card: #181818;
+      --wit: #ffffff; --grijs: #777777; --grijs-licht: #aaaaaa; --lijn: #222222;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Jost', sans-serif;
+      --radius: 4px; --max: 800px; --nav-h: 64px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--zwart); color: var(--wit); font-family: var(--font-body); font-weight: 300; font-size: 15px; line-height: 1.85; -webkit-font-smoothing: antialiased; }
+    a { color: var(--goud); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--goud-licht); }
+
+    .nav { position: sticky; top: 0; z-index: 100; height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; padding: 0 32px; background: rgba(10,10,10,0.97); border-bottom: 1px solid var(--lijn); backdrop-filter: blur(10px); }
+    .nav-logo img { height: 40px; width: auto; }
+    .nav-logo span { font-family: var(--font-display); font-size: 1.1rem; color: var(--goud); font-weight: 600; }
+    .nav-terug { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grijs); display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
+    .nav-terug:hover { color: var(--goud); }
+
+    .page-hero { border-bottom: 1px solid var(--lijn); padding: 64px 32px 56px; text-align: center; background: var(--zwart-zacht); }
+    .page-hero .label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--goud); display: block; margin-bottom: 12px; }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); color: var(--wit); font-weight: 600; margin-bottom: 12px; }
+    .page-hero .datum { font-size: 0.78rem; color: var(--grijs); }
+
+    .content { max-width: var(--max); margin: 0 auto; padding: 64px 32px 100px; }
+
+    .artikel { margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--lijn); }
+    .artikel:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .artikel-nummer { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--goud); display: block; margin-bottom: 8px; }
+    .artikel h2 { font-family: var(--font-display); font-size: 1.6rem; color: var(--wit); font-weight: 600; margin-bottom: 20px; }
+    .artikel p { color: var(--grijs-licht); margin-bottom: 14px; font-size: 0.93rem; }
+    .artikel p:last-child { margin-bottom: 0; }
+    .artikel ul { list-style: none; margin: 14px 0; display: flex; flex-direction: column; gap: 8px; }
+    .artikel ul li { padding-left: 18px; position: relative; color: var(--grijs-licht); font-size: 0.93rem; }
+    .artikel ul li::before { content: "—"; position: absolute; left: 0; color: var(--goud); }
+
+    .highlight { background: var(--zwart-card); border: 1px solid var(--goud-donker); border-radius: var(--radius); padding: 20px 24px; margin: 20px 0; }
+    .highlight p { color: var(--grijs-licht); font-size: 0.88rem; margin: 0; }
+    .highlight strong { color: var(--goud-licht); }
+
+    .waarschuwing { background: rgba(201,168,76,0.06); border-left: 3px solid var(--goud); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 20px; margin: 20px 0; }
+    .waarschuwing p { color: var(--grijs-licht); font-size: 0.88rem; margin: 0; }
+
+    .contact-kaart { background: var(--zwart-card); border: 1px solid var(--lijn); border-radius: var(--radius); padding: 28px 32px; margin-top: 20px; }
+    .contact-kaart p { color: var(--grijs-licht); font-size: 0.9rem; margin-bottom: 6px; }
+    .contact-kaart strong { color: var(--wit); }
+
+    .footer { border-top: 1px solid var(--lijn); padding: 32px; text-align: center; font-size: 0.72rem; color: var(--grijs); line-height: 2; }
+
+    @media (max-width: 600px) {
+      .nav { padding: 0 20px; }
+      .content { padding: 48px 20px 80px; }
+      .page-hero { padding: 48px 20px 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="index.html" class="nav-logo">
+    <img src="images/logo.png" alt="X Royal Barbershop" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+    <span style="display:none">X Royal Barbershop</span>
+  </a>
+  <a href="index.html" class="nav-terug">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 5-7 7 7 7"/></svg>
+    Terug naar de website
+  </a>
+</header>
+
+<div class="page-hero">
+  <span class="label">Juridisch</span>
+  <h1>Algemene Voorwaarden</h1>
+  <p class="datum">Versie 1.0 — Vastgesteld juni 2025</p>
+</div>
+
+<div class="content">
+
+  <!-- 1. IDENTITEIT -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 1</span>
+    <h2>Onze gegevens</h2>
+    <p>Deze algemene voorwaarden zijn van toepassing op alle diensten van:</p>
+    <div class="contact-kaart">
+      <p><strong>X Royal Barbershop</strong></p>
+      <p>Stationsweg 24, 9781 CH Bedum</p>
+      <p>KvK-nummer: <strong>INVULLEN_KVK</strong></p>
+      <p>E-mailadres: <strong>xroyalbarbershop@gmail.com</strong></p>
+      <p>Telefoon: <strong>050 - 211 3546</strong></p>
+    </div>
+  </div>
+
+  <!-- 2. TOEPASSELIJKHEID -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 2</span>
+    <h2>Toepasselijkheid</h2>
+    <p>Deze voorwaarden zijn van toepassing op iedere bezoeker en klant van X Royal Barbershop, zowel bij bezoeken zonder afspraak (inloop) als bij afspraken geboekt via onze website, telefonisch of via Salonhub.</p>
+    <p>Door het maken van een afspraak of het betreden van onze salon ga je akkoord met deze voorwaarden.</p>
+  </div>
+
+  <!-- 3. AFSPRAKEN -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 3</span>
+    <h2>Afspraken maken en bevestigen</h2>
+    <p>Afspraken kunnen worden gemaakt via:</p>
+    <ul>
+      <li>Onze website via het online boekingssysteem (Salonhub).</li>
+      <li>Telefonisch via 050 - 211 3546.</li>
+      <li>In de salon zelf.</li>
+    </ul>
+    <p>Na het boeken ontvang je een bevestiging per e-mail. Een afspraak is definitief zodra je deze bevestiging hebt ontvangen.</p>
+    <div class="highlight">
+      <p><strong>Let op:</strong> Controleer je e-mail (inclusief de spammap) na het boeken. Bij geen bevestiging binnen 15 minuten, neem dan contact met ons op.</p>
+    </div>
+  </div>
+
+  <!-- 4. ANNULERING -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 4</span>
+    <h2>Annulering en wijzigen</h2>
+    <p>Wij begrijpen dat plannen kunnen veranderen. Wij hanteren de volgende annuleringsregels:</p>
+    <ul>
+      <li>Annuleren of verzetten is <strong>gratis</strong> tot <strong>24 uur voor aanvang</strong> van de afspraak.</li>
+      <li>Annuleren of verzetten binnen 24 uur is niet meer mogelijk zonder kosten.</li>
+    </ul>
+    <div class="waarschuwing">
+      <p>Annuleren kan via de link in jouw bevestigingsmail, telefonisch via 050 - 211 3546, of per e-mail naar xroyalbarbershop@gmail.com.</p>
+    </div>
+  </div>
+
+  <!-- 5. NO-SHOW -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 5</span>
+    <h2>No-show beleid</h2>
+    <p>Wij reserveren tijd speciaal voor jou. Wanneer je niet verschijnt zonder voorafgaand bericht, loopt onze medewerker inkomsten mis. Daarom hanteren wij de volgende regels:</p>
+    <div class="highlight">
+      <p>Bij een <strong>no-show</strong> (niet verschijnen zonder tijdige annulering) wordt <strong>100% van de behandelprijs</strong> als annuleringskosten in rekening gebracht.</p>
+    </div>
+    <ul>
+      <li>Bij een eerste no-show ontvang je een waarschuwing en een factuur voor de behandelprijs.</li>
+      <li>Bij een tweede no-show behouden wij het recht om toekomstige boekingen te weigeren of een aanbetaling te vereisen.</li>
+    </ul>
+    <p>No-show kosten worden gefactureerd via e-mail en dienen binnen 14 dagen te worden voldaan.</p>
+  </div>
+
+  <!-- 6. TE LAAT -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 6</span>
+    <h2>Te laat komen</h2>
+    <p>Kom je meer dan <strong>10 minuten te laat</strong>? Dan behouden wij het recht om:</p>
+    <ul>
+      <li>De behandeling in te korten zodat de volgende klant niet wordt vertraagd.</li>
+      <li>De afspraak te annuleren, waarbij de no-show regels van Artikel 5 van toepassing zijn.</li>
+    </ul>
+    <p>Wij verzoeken je vriendelijk om bij vertraging zo snel mogelijk contact met ons op te nemen via 050 - 211 3546.</p>
+  </div>
+
+  <!-- 7. KLACHTEN EN HERSTEL -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 7</span>
+    <h2>Klachten en gratis herstel</h2>
+    <p>Jouw tevredenheid is onze prioriteit. Ben je niet tevreden met het resultaat? Meld dit dan zo snel mogelijk.</p>
+    <div class="highlight">
+      <p>Klachten over de uitvoering van een behandeling moeten <strong>binnen 3 dagen na het bezoek</strong> worden gemeld. Wij bieden dan de mogelijkheid voor een <strong>gratis correctiebehandeling</strong>.</p>
+    </div>
+    <ul>
+      <li>Meld je klacht per e-mail via xroyalbarbershop@gmail.com of telefonisch via 050 - 211 3546.</li>
+      <li>Klachten die later dan 3 dagen worden gemeld, geven geen recht op gratis herstel.</li>
+      <li>Wij streven ernaar om elke klacht binnen 3 werkdagen te beantwoorden.</li>
+    </ul>
+  </div>
+
+  <!-- 8. PRIJZEN -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 8</span>
+    <h2>Prijzen en betaling</h2>
+    <p>Alle vermelde prijzen op onze website en in de salon zijn inclusief btw (21%). Wij behouden ons het recht om prijzen te wijzigen. Gewijzigde prijzen gelden voor nieuwe afspraken.</p>
+    <ul>
+      <li>Betaling geschiedt direct na afloop van de behandeling, in de salon.</li>
+      <li>Wij accepteren contant geld en betaalkaarten.</li>
+      <li>Facturen voor no-show kosten dienen binnen 14 dagen te worden voldaan.</li>
+    </ul>
+  </div>
+
+  <!-- 9. AANSPRAKELIJKHEID -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 9</span>
+    <h2>Aansprakelijkheid</h2>
+    <p>X Royal Barbershop voert alle behandelingen uit met de grootst mogelijke zorgvuldigheid. Desondanks geldt het volgende:</p>
+    <ul>
+      <li>Wij zijn niet aansprakelijk voor schade die het gevolg is van onjuiste of onvolledige informatie verstrekt door de klant (bijvoorbeeld over allergieën of huidaandoeningen).</li>
+      <li>Wij zijn niet aansprakelijk voor beschadiging of verlies van persoonlijke eigendommen die zijn meegebracht naar de salon.</li>
+      <li>Onze aansprakelijkheid is in alle gevallen beperkt tot het bedrag dat voor de betreffende behandeling in rekening is gebracht.</li>
+    </ul>
+    <div class="waarschuwing">
+      <p>Heb je een gevoelige huid, allergie of andere bijzonderheid? Informeer ons dan altijd <strong>vóór aanvang</strong> van de behandeling.</p>
+    </div>
+  </div>
+
+  <!-- 10. GEDRAG -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 10</span>
+    <h2>Gedragsregels in de salon</h2>
+    <p>Wij verwachten van alle bezoekers respectvol gedrag naar medewerkers en andere klanten. X Royal Barbershop behoudt het recht om personen die zich ongepast gedragen de toegang tot de salon te ontzeggen, zonder recht op restitutie.</p>
+    <ul>
+      <li>Kinderen zijn welkom, maar dienen onder toezicht van een volwassene te blijven.</li>
+      <li>Huisdieren zijn niet toegestaan in de salon, met uitzondering van hulphonden.</li>
+      <li>Roken en het gebruik van drugs zijn verboden op het gehele terrein.</li>
+    </ul>
+  </div>
+
+  <!-- 11. TOEPASSELIJK RECHT -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 11</span>
+    <h2>Toepasselijk recht en geschillen</h2>
+    <p>Op deze algemene voorwaarden is uitsluitend Nederlands recht van toepassing. Geschillen die voortvloeien uit of samenhangen met deze voorwaarden worden in eerste instantie via minnelijk overleg opgelost.</p>
+    <p>Komen wij er samen niet uit? Dan kan het geschil worden voorgelegd aan de bevoegde rechter in het arrondissement Noord-Nederland.</p>
+    <p>Voor consumenten bestaat ook de mogelijkheid om een geschil voor te leggen via het <a href="https://www.eu-geschillenoplossing.eu" target="_blank" rel="noopener">Europees ODR-platform</a>.</p>
+  </div>
+
+  <!-- 12. WIJZIGINGEN -->
+  <div class="artikel">
+    <span class="artikel-nummer">Artikel 12</span>
+    <h2>Wijzigingen in deze voorwaarden</h2>
+    <p>X Royal Barbershop behoudt het recht om deze algemene voorwaarden te wijzigen. De meest actuele versie is altijd beschikbaar op onze website. Bij ingrijpende wijzigingen informeren wij bestaande klanten via e-mail.</p>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <p>© 2025 X Royal Barbershop — Stationsweg 24, 9781 CH Bedum</p>
+  <p style="margin-top:8px">
+    <a href="index.html">Home</a> &nbsp;·&nbsp;
+    <a href="algemene-voorwaarden.html">Algemene Voorwaarden</a> &nbsp;·&nbsp;
+    <a href="privacybeleid.html">Privacybeleid</a>
+  </p>
+</footer>
+
+</body>
+</html>
