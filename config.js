@@ -10,7 +10,7 @@ const websiteContent = {
   boekingslink:  "https://xroyalbarbershop.salonized.com/bookings/new",
 
   // ── Hero ──────────────────────────────────────────────
-  heroTitel:    "Vakmanschap dat je ziet.",
+  heroTitel:    "X Royal Barbershop",
   heroSubtitel: "Knippen, scheren en baardverzorging in Bedum — door een kapper die weet wat hij doet.",
 
   // ── Voordelen ─────────────────────────────────────────
