@@ -64,19 +64,19 @@ const websiteContent = {
       naam:    "Ramez",
       sterren: 5,
       tekst:   "Ahmad is echt een topkapper! Supervriendelijk en heeft veel ervaring met haar en baarden. De plek is heel relaxed, je wordt meteen welkom geheten, krijgt een lekker kopje koffie en natuurlijk een professionele knipbeurt. Echt een aanrader!",
-      datum:   "8 maanden geleden"
+      datum:   "Google review"
     },
     {
       naam:    "Harry",
       sterren: 5,
       tekst:   "Vanmorgen voor het eerst geweest. Hartelijk ontvangen door Ahmad. Neemt alle tijd voor je en geeft goed advies. En natuurlijk zeer blij met het resultaat. Jullie hebben er weer een klant bij 👍",
-      datum:   "7 maanden geleden"
+      datum:   "Google review"
     },
     {
       naam:    "Björn Kampyon",
       sterren: 5,
       tekst:   "Ik kom al 5 jaar bij Ahmad, nu hij zijn eigen kapperszaak heeft nog steeds. Hij knipt mij altijd goed en de sfeer is super.",
-      datum:   "7 maanden geleden"
+      datum:   "Google review"
     }
   ],
 
