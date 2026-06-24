@@ -7,17 +7,18 @@ const websiteContent = {
   adres:         "Stationsweg 24, 9781 CH Bedum",
   googleMapsLink: "https://maps.google.com/?q=Stationsweg+24,+9781+CH+Bedum",
   instagram:     "https://www.instagram.com/ahmad17_barber/",
+  tiktok:        "https://www.tiktok.com/@x.royal.barbersho",
   boekingslink:  "https://xroyalbarbershop.salonized.com/bookings/new",
 
   // ── Hero ──────────────────────────────────────────────
-  heroTitel:    "X Royal Barbershop",
+  heroTitel:    "Vakmanschap dat je ziet.",
   heroSubtitel: "Knippen, scheren en baardverzorging in Bedum — door een kapper die weet wat hij doet.",
 
   // ── Voordelen ─────────────────────────────────────────
   voordelen: [
     { icoon: "✦", titel: "Strak resultaat",      tekst: "Van moderne fade tot klassieke coupe — altijd afgestemd op jouw gezichtsvorm en stijl." },
-    { icoon: "✦", titel: "Compleet verzorgd",  tekst: "Knippen, baard bijwerken, gezicht verzorgen — het kan allemaal tijdens één bezoek. Kopje koffie staat al voor je klaar, dus neem rustig de tijd." },
-    { icoon: "✦", titel: "Gratis parkeren",         tekst: "Geen speurtocht naar een plekje. Zet je auto gratis voor de deur en loop zo naar binnen." }
+    { icoon: "✦", titel: "Alles onder één dak",  tekst: "Haar, baard, epileren, facial steam, scrub & masker. Volledige verzorging in één bezoek." },
+    { icoon: "✦", titel: "Welkom gevoel",         tekst: "Je wordt ontvangen met een kop koffie en persoonlijk advies. Geen haast, wel resultaat." }
   ],
 
   // ── Diensten & tarieven ───────────────────────────────

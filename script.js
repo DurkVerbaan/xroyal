@@ -88,8 +88,9 @@ document.addEventListener('DOMContentLoaded', function () {
   emailEl.textContent = c.email;
   emailEl.href        = 'mailto:' + c.email;
 
-  document.getElementById('contact-cta').href = c.boekingslink;
-  document.getElementById('contact-ig').href  = c.instagram;
+  document.getElementById('contact-cta').href    = c.boekingslink;
+  document.getElementById('contact-ig').href     = c.instagram;
+  document.getElementById('contact-tiktok').href = c.tiktok;
 
   // ── Openingstijden ───────────────────────────────────
   var lijst = document.getElementById('openingstijden-lijst');
