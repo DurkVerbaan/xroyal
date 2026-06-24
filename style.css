@@ -367,7 +367,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 .tarieven-tabel tr:hover { background: rgba(255,255,255,0.02); }
 .tarieven-tabel tr:first-child { border-top: 1px solid var(--lijn); }
 .tarieven-tabel td { padding: 16px 0; font-size: 0.88rem; vertical-align: middle; }
-.tarieven-tabel td:first-child { color: #cccccc; }
+.tarieven-tabel td:first-child { color: #cccccc; padding-left: 20px;}
 .tarieven-tabel td.prijs {
   text-align: right;
   color: var(--goud);
@@ -376,6 +376,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   font-weight: 600;
   white-space: nowrap;
   padding-left: 20px;
+  padding-right: 20px;
 }
 
 .vip-row { background: rgba(201,168,76,0.05) !important; border-top: 1px solid rgba(201,168,76,0.2) !important; border-bottom: 1px solid rgba(201,168,76,0.2) !important; }
