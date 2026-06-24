@@ -322,7 +322,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   background: var(--zwart-card);
   border: 1px solid var(--lijn);
 }
-.over-ons-foto img { width: 100%; height: 100%; object-fit: cover; }
+.over-ons-foto img { width: 100%; height: 125%; object-fit: cover; }
 .foto-fallback {
   position: absolute;
   inset: 0;
