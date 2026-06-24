@@ -10,26 +10,25 @@ const websiteContent = {
   boekingslink:  "https://xroyalbarbershop.salonized.com/bookings/new",
 
   // ── Hero ──────────────────────────────────────────────
-  heroTitel:    "X Royal Barbershop",
+  heroTitel:    "Vakmanschap dat je ziet.",
   heroSubtitel: "Knippen, scheren en baardverzorging in Bedum — door een kapper die weet wat hij doet.",
 
   // ── Voordelen ─────────────────────────────────────────
   voordelen: [
     { icoon: "✦", titel: "Strak resultaat",      tekst: "Van moderne fade tot klassieke coupe — altijd afgestemd op jouw gezichtsvorm en stijl." },
-    { icoon: "✦", titel: "Compleet verzorgd",  tekst: "Knippen, baard bijwerken, gezicht verzorgen — het kan allemaal tijdens één bezoek. Kopje koffie staat al voor je klaar, dus neem rustig de tijd." },
-    { icoon: "✦", titel: "Gratis parkeren",         tekst: "Geen speurtocht naar een plekje. Zet je auto gratis voor de deur en loop zo naar binnen." }
+    { icoon: "✦", titel: "Alles onder één dak",  tekst: "Haar, baard, epileren, facial steam, scrub & masker. Volledige verzorging in één bezoek." },
+    { icoon: "✦", titel: "Welkom gevoel",         tekst: "Je wordt ontvangen met een kop koffie en persoonlijk advies. Geen haast, wel resultaat." }
   ],
 
   // ── Diensten & tarieven ───────────────────────────────
   diensten: [
-    { categorie: "Heren",     naam: "Knippen",                                                       prijs: "€ 28,50", vip: false },
-    { categorie: "Heren",     naam: "Knippen & baard contour",                                       prijs: "€ 30,00", vip: false },
-    { categorie: "Heren",     naam: "Knippen & baard (full)",                                        prijs: "€ 41,00", vip: false },
-    { categorie: "Heren",     naam: "Knippen & Italian shave",                                       prijs: "€ 42,00", vip: false },
-    { categorie: "Heren",     naam: "Knippen & epileren met touw",                                   prijs: "€ 40,00", vip: false },
-    { categorie: "Heren",     naam: "Knippen & stoom, scrub & masker",                               prijs: "€ 48,00", vip: false },
-    { categorie: "Heren",     naam: "VIP — haar, baard, epileren & luxe gezichtsbehandeling",        prijs: "€ 65,00", vip: true  },
-    { categorie: "Kinderen",  naam: "Stoere kapsels voor jongens — selecteer in de boekingstool",    prijs: "Zie boekingstool", vip: false }
+    { naam: "Knippen",                                                 prijs: "€ 28,50", highlight: true  },
+    { naam: "Knippen & baard contour",                                 prijs: "€ 30,00", highlight: false },
+    { naam: "Knippen & baard (full)",                                  prijs: "€ 41,00", highlight: false },
+    { naam: "Knippen & Italian shave",                                 prijs: "€ 42,00", highlight: false },
+    { naam: "Knippen & epileren met touw",                             prijs: "€ 40,00", highlight: false },
+    { naam: "Knippen & stoom, scrub & masker",                         prijs: "€ 48,00", highlight: false },
+    { naam: "VIP — haar, baard, epileren & luxe gezichtsbehandeling",  prijs: "€ 65,00", highlight: false }
   ],
 
   // ── Lookbook ──────────────────────────────────────────

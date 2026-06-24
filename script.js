@@ -23,24 +23,13 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('over-ons-cta').href          = c.boekingslink;
 
   // ── Tarieven ─────────────────────────────────────────
-  function renderTarieven(tab) {
-    var tb = document.getElementById('tarieven-body');
-    tb.innerHTML = '';
-    c.diensten.filter(function (d) { return d.categorie === tab; }).forEach(function (d) {
-      var tr = document.createElement('tr');
-      if (d.vip) tr.className = 'vip-row';
-      var badge = d.vip ? '<span class="vip-badge">Best seller</span>' : '';
-      tr.innerHTML = '<td>' + d.naam + badge + '</td><td class="prijs">' + d.prijs + '</td>';
-      tb.appendChild(tr);
-    });
-  }
-  renderTarieven('Heren');
-  document.querySelectorAll('.tab-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('.tab-btn').forEach(function (b) { b.classList.remove('actief'); });
-      btn.classList.add('actief');
-      renderTarieven(btn.dataset.tab);
-    });
+  var tb = document.getElementById('tarieven-body');
+  c.diensten.forEach(function (d) {
+    var tr = document.createElement('tr');
+    if (d.highlight) tr.className = 'vip-row';
+    var badge = d.highlight ? '<span class="vip-badge">Meest gekozen</span>' : '';
+    tr.innerHTML = '<td>' + d.naam + badge + '</td><td class="prijs">' + d.prijs + '</td>';
+    tb.appendChild(tr);
   });
   document.getElementById('tarieven-boek-link').href = c.boekingslink;
 
