@@ -178,7 +178,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   display: flex;
   align-items: center;
   padding-top: var(--nav-h);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero-bg {
@@ -575,40 +575,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   z-index: 300;
   background: var(--zwart);
   border-top: 1px solid var(--lijn);
-  flex-direction: column;
-  padding: 10px 16px 14px;
-  gap: 8px;
-}
-
-.sticky-social {
-  display: flex;
+  padding: 12px 16px;
   gap: 10px;
 }
-
-.sticky-social-btn {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-family: var(--font-body);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--grijs);
-  border: 1px solid var(--lijn);
-  border-radius: var(--radius);
-  padding: 10px 8px;
-  transition: color 0.2s, border-color 0.2s;
-}
-.sticky-social-btn:hover { color: var(--goud); border-color: var(--goud); }
-
-.sticky-knoppen {
-  display: flex;
-  gap: 10px;
-}
-
 .sticky-btn {
   flex: 1;
   display: flex;
@@ -697,6 +666,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
     padding: 12px 8px;
   }
 
-  .footer { padding-bottom: 120px; }
+  .scroll-hint { display: flex; }
+  .footer { padding-bottom: 96px; }
   .sticky-cta { display: flex; }
 }
