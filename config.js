@@ -8,7 +8,7 @@ const websiteContent = {
   googleMapsLink: "https://maps.google.com/?q=Stationsweg+24,+9781+CH+Bedum",
   instagram:     "https://www.instagram.com/ahmad17_barber/",
   tiktok:        "https://www.tiktok.com/@x.royal.barbersho",
-  boekingslink:  "https://xroyalbarbershop.salonized.com/bookings/new",
+  boekingslink:  "#salonhub-create-client:xroyalbarbershop-salon:bedum",
 
   // ── Hero ──────────────────────────────────────────────
   heroTitel:    "X Royal Barbershop",
