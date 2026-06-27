@@ -641,7 +641,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
   .nav-cta { text-align: center; border-radius: 0 !important; }
   .nav-toggle { display: flex; }
 
-  .hero-content { padding: 60px 24px 80px; }
+  .hero-content { padding: 60px 24px 80px; margin-bottom: 380px; }
   .hero-knoppen { flex-direction: column; }
   .hero-knoppen .btn-primary,
   .hero-knoppen .btn-ghost { text-align: center; }
