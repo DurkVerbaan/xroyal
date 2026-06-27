@@ -6,7 +6,7 @@ const websiteContent = {
   email:         "xroyalbarbershop@gmail.com",
   adres:         "Stationsweg 24, 9781 CH Bedum",
   googleMapsLink: "https://maps.google.com/?q=Stationsweg+24,+9781+CH+Bedum",
-  instagram:     "https://www.instagram.com/ahmad17_barber/",
+  instagram:     "https://www.instagram.com/xroyal_barbershop/",
   tiktok:        "https://www.tiktok.com/@x.royal.barbersho",
   boekingslink:  "#salonhub-create-client:xroyalbarbershop-salon:bedum",
 
@@ -81,6 +81,6 @@ const websiteContent = {
     }
   ],
 
-  googleReviewsLink: "https://www.google.com/maps/place/X+Royal+Barbershop"
+  googleReviewsLink: "https://www.google.com/search?sca_esv=8b4e0f10aed68b61&rlz=1C5OZZY_enNL1214NL1214&sxsrf=APpeQnsnWhE96JUk73-i49UAyYtvZPsLfA:1782587267451&uds=AJ5uw1_a2D0D09lxm8gpKKOTUn4r_ma7KZ9Utblj5_vcj4acKBZsAwmh6EGQxLDxpzE8aM7XDoOQEUG93vWKIn38ZDbHEXC2YW9flBetijZTawUoXgjsDCMEesd9ECyiFtTSEpzQuXhPY28MhGA3pA3avLh3t4mxRw&q=X+Royal+barbershop+Reviews&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_-WVwL97U6eFL-N6jxTE3JZ_GMdjhQipn5_tZuG_cIMrbSce6YPSxszG3l1YKM29zFpSYx780MU0tQ5retN86lJelvVRJ5qTFdkgwuAwYJ3gqwvYlw%3D%3D&hl=nl-NL&sa=X&ved=2ahUKEwic3O2Gj6iVAxU-zgIHHQlyADIQ_4MLegQIMRAO&biw=1418&bih=729&dpr=1"
 
 };
