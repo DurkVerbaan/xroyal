@@ -23,6 +23,7 @@ const websiteContent = {
 
   // ── Diensten & tarieven ───────────────────────────────
   diensten: [
+    { naam: "Knippen kinderen (4 t/m 12 jaar)",                         prijs: "€ 22,00", highlight: false },
     { naam: "Knippen",                                                 prijs: "€ 28,50", highlight: true  },
     { naam: "Knippen & baard contour",                                 prijs: "€ 30,00", highlight: false },
     { naam: "Knippen & baard (full)",                                  prijs: "€ 41,00", highlight: false },
