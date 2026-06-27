@@ -128,8 +128,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 }
 .nav.scrolled { box-shadow: 0 4px 32px rgba(0,0,0,0.5); }
 
-.logo-img       { height: 80px; width: auto; }
-.logo-img.small { height: 36px; }
+.logo-img       { height: 100px; width: auto; }
+.logo-img.small { height: 100px; }
 
 .nav-links {
   display: flex;
