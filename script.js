@@ -90,6 +90,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.getElementById('contact-cta').href = c.boekingslink;
   document.getElementById('contact-ig').href  = c.instagram;
+  var tiktokEl = document.getElementById('contact-tiktok');
+  if (tiktokEl) tiktokEl.href = c.tiktok;
 
   // ── Openingstijden ───────────────────────────────────
   var lijst = document.getElementById('openingstijden-lijst');

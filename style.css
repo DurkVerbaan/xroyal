@@ -62,7 +62,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 
 /* ── Knoppen ── */
 .btn-primary {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: var(--goud);
   color: var(--zwart);
   font-family: var(--font-body);
@@ -78,7 +80,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 .btn-primary:hover { background: var(--goud-licht); transform: translateY(-1px); }
 
 .btn-ghost {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   border: 1px solid rgba(201,168,76,0.4);
   color: var(--goud);
   font-family: var(--font-body);
@@ -524,6 +528,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 .contact-tel-big { font-family: var(--font-display) !important; font-size: 1.5rem !important; color: var(--goud) !important; }
 
 .contact-knoppen { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.contact-sociaal-rij { display: flex; gap: 16px; align-items: center; }
 .social-ig {
   display: flex;
   align-items: center;
