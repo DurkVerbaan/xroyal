@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kapper Dashboard Backoffice</title>
+  <!-- We laden Sanity Studio direct in via internet (geen terminal nodig!) -->
+  <script type="module">
+    import { defineConfig, renderStudio } from 'https://esm.sh/sanity@3.45.0'
+    import { structureTool } from 'https://esm.sh/sanity@3.45.0/structure'
+
+    const config = defineConfig({
+      title: 'Kapper Dashboard',
+      projectId: 'ghjlt25x', // <--- VERVANG DIT DOOR JOUW PROJECT ID
+      dataset: 'production',
+      plugins: [structureTool()],
+      basePath: '/studio.html', // Dit zorgt dat het werkt op deze pagina
+      schema: {
+        types: [
+          {
+            name: 'salonInfo',
+            title: 'Salon Informatie',
+            type: 'document',
+            fields: [
+              { name: 'maandag', title: 'Maandag', type: 'string' },
+              { name: 'dinsdag', title: 'Dinsdag', type: 'string' },
+              { name: 'woensdag', title: 'Woensdag', type: 'string' },
+              { name: 'donderdag', title: 'Donderdag', type: 'string' },
+              { name: 'vrijdag', title: 'Vrijdag', type: 'string' },
+              { name: 'zaterdag', title: 'Zaterdag', type: 'string' },
+              { name: 'zondag', title: 'Zondag', type: 'string' },
+              {
+                name: 'galerij',
+                title: 'Foto Galerij',
+                type: 'array',
+                of: [{ type: 'image' }]
+              }
+            ]
+          }
+        ]
+      }
+    })
+
+    // Dit start het dashboard op het scherm
+    renderStudio(document.getElementById('sanity-studio'), config)
+  </script>
+  <style>
+    html, body, #sanity-studio { height: 100%; margin: 0; padding: 0; }
+  </style>
+</head>
+<body>
+  <div id="sanity-studio"></div>
+</body>
+</html>
