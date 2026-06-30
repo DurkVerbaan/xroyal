@@ -1,38 +1,55 @@
-<script type="module">
-  import { defineConfig, renderStudio } from 'https://esm.sh/sanity@3.45.0'
-  import { structureTool } from 'https://esm.sh/sanity@3.45.0/structure'
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kapper Dashboard Backoffice</title>
+  <script type="module">
+    import { defineConfig, renderStudio } from 'https://esm.sh/sanity@3.45.0'
+    import { structureTool } from 'https://esm.sh/sanity@3.45.0/structure'
 
-  const config = defineConfig({
-    title: 'Kapper Dashboard',
-    projectId: 'e0ob8h0m', 
-    dataset: 'production',
-    plugins: [structureTool()],
-    // We halen de basePath weg zodat Sanity de huidige pagina als basis gebruikt
-    schema: {
-      types: [
-        {
-          name: 'salonInfo',
-          title: 'Salon Informatie',
-          type: 'document',
-          fields: [
-            { name: 'maandag', title: 'Maandag', type: 'string' },
-            { name: 'dinsdag', title: 'Dinsdag', type: 'string' },
-            { name: 'woensdag', title: 'Woensdag', type: 'string' },
-            { name: 'donderdag', title: 'Donderdag', type: 'string' },
-            { name: 'vrijdag', title: 'Vrijdag', type: 'string' },
-            { name: 'zaterdag', title: 'Zaterdag', type: 'string' },
-            { name: 'zondag', title: 'Zondag', type: 'string' },
-            {
-              name: 'galerij',
-              title: 'Foto Galerij',
-              type: 'array',
-              of: [{ type: 'image' }]
-            }
-          ]
-        }
-      ]
-    }
-  })
+    const config = defineConfig({
+      title: 'Kapper Dashboard',
+      projectId: 'JOUW_PROJECT_ID_HIER', // <--- Controleer of hier jouw échte ID staat!
+      dataset: 'production',
+      plugins: [structureTool()],
+      basePath: window.location.pathname, 
+      schema: {
+        types: [
+          {
+            name: 'salonInfo',
+            title: 'Salon Informatie',
+            type: 'document',
+            fields: [
+              { name: 'maandag', title: 'Maandag', type: 'string' },
+              { name: 'dinsdag', title: 'Dinsdag', type: 'string' },
+              { name: 'woensdag', title: 'Woensdag', type: 'string' },
+              { name: 'donderdag', title: 'Donderdag', type: 'string' },
+              { name: 'vrijdag', title: 'Vrijdag', type: 'string' },
+              { name: 'zaterdag', title: 'Zaterdag', type: 'string' },
+              { name: 'zondag', title: 'Zondag', type: 'string' },
+              {
+                name: 'galerij',
+                title: 'Foto Galerij',
+                type: 'array',
+                of: [{ type: 'image' }]
+              }
+            ]
+          }
+        ]
+      }
+    })
 
-  renderStudio(document.getElementById('sanity-studio'), config)
-</script>
+    // Wacht tot de HTML body geladen is, voer dan pas Sanity uit
+    window.addEventListener('DOMContentLoaded', () => {
+      renderStudio(document.getElementById('sanity-studio'), config)
+    })
+  </script>
+  <style>
+    html, body, #sanity-studio { height: 100vh; margin: 0; padding: 0; background: #f4f4f5; }
+  </style>
+</head>
+<body>
+  <div id="sanity-studio"></div>
+</body>
+</html>
