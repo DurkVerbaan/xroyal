@@ -33,21 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   document.getElementById('tarieven-boek-link').href = c.boekingslink;
 
-  // ── Lookbook ─────────────────────────────────────────
-  var lg = document.getElementById('lookbook-grid');
-  c.lookbook.forEach(function (item, i) {
-    var div = document.createElement('div');
-    div.className = 'lookbook-item fade-in' + (i % 4 > 0 ? ' fd' + (i % 4) : '');
-    div.innerHTML =
-      '<img src="' + item.bestand + '" alt="' + item.label + '" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">' +
-      '<div class="lookbook-placeholder" style="display:none">' +
-        '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>' +
-        '<span>' + item.label + '<br><small>' + item.bestand + '</small></span>' +
-      '</div>' +
-      '<div class="lookbook-label">' + item.label + '</div>';
-    lg.appendChild(div);
-  });
-
   // ── Reviews ──────────────────────────────────────────
   var rg = document.getElementById('reviews-grid');
   c.reviews.forEach(function (r, i) {
@@ -93,15 +78,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var tiktokEl = document.getElementById('contact-tiktok');
   if (tiktokEl) tiktokEl.href = c.tiktok;
 
-  // ── Openingstijden ───────────────────────────────────
-  var lijst = document.getElementById('openingstijden-lijst');
-  c.openingstijden.forEach(function (o) {
-    var li = document.createElement('li');
-    if (o.tijd === 'Gesloten') li.classList.add('dag-gesloten');
-    li.innerHTML = '<span class="dag-naam">' + o.dag + '</span><span class="dag-tijd">' + o.tijd + '</span>';
-    lijst.appendChild(li);
-  });
-
   // ── Footer ───────────────────────────────────────────
   document.getElementById('footer-adres').textContent = c.adres;
   document.getElementById('footer-jaar').textContent  = new Date().getFullYear();
@@ -139,4 +115,74 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(function (el) { observer.observe(el); });
 
+  // ── Start Sanity Integraties ─────────────────────────
+  haalOpeningstijdenOp();
+  haalLookbookOp();
 });
+
+// Sanity gegevens
+const PROJECT_ID = 'pnnengxa';
+const DATASET = 'production';
+
+async function haalOpeningstijdenOp() {
+  const QUERY = encodeURIComponent('*[_type == "salonInfo"][0]');
+  const URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
+  try {
+    const response = await fetch(URL);
+    const json = await response.json();
+    const data = json.result;
+
+    if (data) {
+      const lijst = document.getElementById('openingstijden-lijst');
+      lijst.innerHTML = '';
+      const dagen = ['maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag', 'zondag'];
+      dagen.forEach(dag => {
+        const tijd = data[dag] || 'Gesloten';
+        const dagNetjes = dag.charAt(0).toUpperCase() + dag.slice(1);
+        lijst.innerHTML += `<li class="${tijd === 'Gesloten' ? 'dag-gesloten' : ''}"><span class="dag-naam">${dagNetjes}</span><span class="dag-tijd">${tijd}</span></li>`;
+      });
+    }
+  } catch (error) {
+    console.error("Fout bij het ophalen van Sanity tijden:", error);
+  }
+}
+
+async function haalLookbookOp() {
+  const QUERY = encodeURIComponent('*[_type == "salonInfo"][0]{ "fotos": galerij[].asset->url }');
+  const URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
+
+  try {
+    const response = await fetch(URL);
+    const json = await response.json();
+    const data = json.result;
+
+    const grid = document.getElementById('lookbook-grid');
+    if (!grid) return;
+    grid.innerHTML = ''; 
+
+    if (!data || !data.fotos || data.fotos.length === 0) {
+      grid.innerHTML = '<p>Nog geen foto\'s toegevoegd aan het lookbook.</p>';
+      return;
+    }
+
+    data.fotos.forEach((fotoUrl, index) => {
+      const fotoHTML = `
+        <div class="lookbook-item fade-in">
+          <img src="${fotoUrl}" alt="Kapperslook ${index + 1}" class="lookbook-img" onerror="this.style.display='none'">
+        </div>
+      `;
+      grid.innerHTML += fotoHTML;
+    });
+    
+    // Her-activeer de observer voor nieuwe elementen
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+        });
+      }, { threshold: 0.1 });
+    grid.querySelectorAll('.fade-in').forEach(function (el) { observer.observe(el); });
+
+  } catch (error) {
+    console.error("Fout bij het ophalen van de galerij:", error);
+  }
+}
