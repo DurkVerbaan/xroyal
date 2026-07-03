@@ -120,20 +120,16 @@ document.addEventListener('DOMContentLoaded', function () {
   haalLookbookOp();
 });
 
-// Sanity gegevens
-const PROJECT_ID = 'pnnengxa';
-const DATASET = 'production';
-
+// Sanity gegevens via Vercel API proxy
 async function haalOpeningstijdenOp() {
-  const QUERY = encodeURIComponent('*[_type == "salonInfo"][0]');
-  const URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
   try {
-    const response = await fetch(URL);
-    const json = await response.json();
-    const data = json.result;
+    const response = await fetch('/api/sanity?type=content');
+    if (!response.ok) throw new Error('Failed to fetch openingstijden');
+    const data = await response.json();
 
     if (data) {
       const lijst = document.getElementById('openingstijden-lijst');
+      if (!lijst) return;
       lijst.innerHTML = '';
       const dagen = ['maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag', 'zondag'];
       dagen.forEach(dag => {
@@ -143,22 +139,19 @@ async function haalOpeningstijdenOp() {
       });
     }
   } catch (error) {
-    console.error("Fout bij het ophalen van Sanity tijden:", error);
+    console.error('Fout bij het ophalen van Sanity tijden:', error);
   }
 }
 
 async function haalLookbookOp() {
-  const QUERY = encodeURIComponent('*[_type == "salonInfo"][0]{ "fotos": galerij[].asset->url }');
-  const URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
-
   try {
-    const response = await fetch(URL);
-    const json = await response.json();
-    const data = json.result;
+    const response = await fetch('/api/sanity?type=lookbook');
+    if (!response.ok) throw new Error('Failed to fetch lookbook');
+    const data = await response.json();
 
     const grid = document.getElementById('lookbook-grid');
     if (!grid) return;
-    grid.innerHTML = ''; 
+    grid.innerHTML = '';
 
     if (!data || !data.fotos || data.fotos.length === 0) {
       grid.innerHTML = '<p>Nog geen foto\'s toegevoegd aan het lookbook.</p>';
@@ -173,16 +166,15 @@ async function haalLookbookOp() {
       `;
       grid.innerHTML += fotoHTML;
     });
-    
-    // Her-activeer de observer voor nieuwe elementen
+
     var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-        });
-      }, { threshold: 0.1 });
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
     grid.querySelectorAll('.fade-in').forEach(function (el) { observer.observe(el); });
 
   } catch (error) {
-    console.error("Fout bij het ophalen van de galerij:", error);
+    console.error('Fout bij het ophalen van de galerij:', error);
   }
 }
