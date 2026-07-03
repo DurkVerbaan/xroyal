@@ -155,56 +155,80 @@ async function fetchSanityData(type) {
   return directJson.result || null;
 }
 
+function renderOpeningstijden(data) {
+  const lijst = document.getElementById('openingstijden-lijst');
+  if (!lijst) return;
+  lijst.innerHTML = '';
+
+  if (Array.isArray(data)) {
+    data.forEach(item => {
+      const tijd = item.tijd || 'Gesloten';
+      const dagNetjes = item.dag || '';
+      lijst.innerHTML += `<li class="${tijd === 'Gesloten' ? 'dag-gesloten' : ''}"><span class="dag-naam">${dagNetjes}</span><span class="dag-tijd">${tijd}</span></li>`;
+    });
+    return;
+  }
+
+  const dagen = ['maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag', 'zondag'];
+  dagen.forEach(dag => {
+    const tijd = data && data[dag] ? data[dag] : 'Gesloten';
+    const dagNetjes = dag.charAt(0).toUpperCase() + dag.slice(1);
+    lijst.innerHTML += `<li class="${tijd === 'Gesloten' ? 'dag-gesloten' : ''}"><span class="dag-naam">${dagNetjes}</span><span class="dag-tijd">${tijd}</span></li>`;
+  });
+}
+
+function renderLookbook(items) {
+  const grid = document.getElementById('lookbook-grid');
+  if (!grid) return;
+  grid.innerHTML = '';
+
+  const fotoUrls = Array.isArray(items)
+    ? items.map(item => typeof item === 'string' ? item : item.bestand || item.url || '')
+    : [];
+
+  if (!fotoUrls.length) {
+    grid.innerHTML = '<p>Nog geen foto\'s toegevoegd aan het lookbook.</p>';
+    return;
+  }
+
+  fotoUrls.filter(Boolean).forEach((fotoUrl, index) => {
+    const fotoHTML = `
+      <div class="lookbook-item fade-in">
+        <img src="${fotoUrl}" alt="Kapperslook ${index + 1}" class="lookbook-img" onerror="this.style.display='none'">
+      </div>
+    `;
+    grid.innerHTML += fotoHTML;
+  });
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  grid.querySelectorAll('.fade-in').forEach(function (el) { observer.observe(el); });
+}
+
 async function haalOpeningstijdenOp() {
   try {
     const data = await fetchSanityData('content');
-
     if (data) {
-      const lijst = document.getElementById('openingstijden-lijst');
-      if (!lijst) return;
-      lijst.innerHTML = '';
-      const dagen = ['maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag', 'zondag'];
-      dagen.forEach(dag => {
-        const tijd = data[dag] || 'Gesloten';
-        const dagNetjes = dag.charAt(0).toUpperCase() + dag.slice(1);
-        lijst.innerHTML += `<li class="${tijd === 'Gesloten' ? 'dag-gesloten' : ''}"><span class="dag-naam">${dagNetjes}</span><span class="dag-tijd">${tijd}</span></li>`;
-      });
+      renderOpeningstijden(data);
+    } else {
+      renderOpeningstijden(websiteContent.openingstijden);
     }
   } catch (error) {
-    console.error('Fout bij het ophalen van Sanity tijden:', error);
+    console.warn('Falling back to local openingstijden content:', error);
+    renderOpeningstijden(websiteContent.openingstijden);
   }
 }
 
 async function haalLookbookOp() {
   try {
     const data = await fetchSanityData('lookbook');
-
-    const grid = document.getElementById('lookbook-grid');
-    if (!grid) return;
-    grid.innerHTML = '';
-
-    if (!data || !data.fotos || data.fotos.length === 0) {
-      grid.innerHTML = '<p>Nog geen foto\'s toegevoegd aan het lookbook.</p>';
-      return;
-    }
-
-    data.fotos.forEach((fotoUrl, index) => {
-      const fotoHTML = `
-        <div class="lookbook-item fade-in">
-          <img src="${fotoUrl}" alt="Kapperslook ${index + 1}" class="lookbook-img" onerror="this.style.display='none'">
-        </div>
-      `;
-      grid.innerHTML += fotoHTML;
-    });
-
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-      });
-    }, { threshold: 0.1 });
-    grid.querySelectorAll('.fade-in').forEach(function (el) { observer.observe(el); });
-
+    const fotos = data && data.fotos ? data.fotos : data;
+    renderLookbook(fotos || websiteContent.lookbook);
   } catch (error) {
-    console.error('Fout bij het ophalen van de galerij:', error);
+    console.warn('Falling back to local lookbook content:', error);
+    renderLookbook(websiteContent.lookbook);
   }
 }
