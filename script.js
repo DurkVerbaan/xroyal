@@ -120,12 +120,39 @@ document.addEventListener('DOMContentLoaded', function () {
   haalLookbookOp();
 });
 
-// Sanity gegevens via Vercel API proxy
+// Sanity gegevens via Vercel API proxy met lokale fallback
+const PROJECT_ID = 'pnnengxa';
+const DATASET = 'production';
+const API_VERSION = '2021-10-21';
+
+async function fetchSanityData(type) {
+  const query = type === 'lookbook'
+    ? '*[_type == "salonInfo"][0]{ "fotos": galerij[].asset->url }'
+    : '*[_type == "salonInfo"][0]';
+  const proxyUrl = `/api/sanity?type=${type}`;
+  const directUrl = `https://${PROJECT_ID}.api.sanity.io/${API_VERSION}/data/query/${DATASET}?query=${encodeURIComponent(query)}`;
+
+  try {
+    const proxyResponse = await fetch(proxyUrl);
+    if (proxyResponse.ok) {
+      return await proxyResponse.json();
+    }
+  } catch (error) {
+    console.warn('Proxy endpoint unavailable, falling back to direct Sanity request:', error);
+  }
+
+  const directResponse = await fetch(directUrl);
+  if (!directResponse.ok) {
+    throw new Error(`Direct Sanity request failed with status ${directResponse.status}`);
+  }
+
+  const directJson = await directResponse.json();
+  return directJson.result || null;
+}
+
 async function haalOpeningstijdenOp() {
   try {
-    const response = await fetch('/api/sanity?type=content');
-    if (!response.ok) throw new Error('Failed to fetch openingstijden');
-    const data = await response.json();
+    const data = await fetchSanityData('content');
 
     if (data) {
       const lijst = document.getElementById('openingstijden-lijst');
@@ -145,9 +172,7 @@ async function haalOpeningstijdenOp() {
 
 async function haalLookbookOp() {
   try {
-    const response = await fetch('/api/sanity?type=lookbook');
-    if (!response.ok) throw new Error('Failed to fetch lookbook');
-    const data = await response.json();
+    const data = await fetchSanityData('lookbook');
 
     const grid = document.getElementById('lookbook-grid');
     if (!grid) return;
