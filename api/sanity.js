@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const type = req.query.type || 'content';
   const projectId = process.env.SANITY_PROJECT_ID || 'pnnengxa';
   const dataset = process.env.SANITY_DATASET || 'production';
@@ -28,4 +28,4 @@ export default async function handler(req, res) {
     console.error('Sanity proxy error:', error);
     res.status(500).json({ error: error.message });
   }
-}
+};
