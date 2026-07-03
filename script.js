@@ -133,15 +133,20 @@ async function fetchSanityData(type) {
   const directUrl = `https://${PROJECT_ID}.api.sanity.io/${API_VERSION}/data/query/${DATASET}?query=${encodeURIComponent(query)}`;
 
   try {
-    const proxyResponse = await fetch(proxyUrl);
+    const proxyResponse = await fetch(proxyUrl, {
+      headers: { Accept: 'application/json' }
+    });
     if (proxyResponse.ok) {
-      return await proxyResponse.json();
+      const proxyJson = await proxyResponse.json();
+      if (proxyJson) return proxyJson;
     }
   } catch (error) {
     console.warn('Proxy endpoint unavailable, falling back to direct Sanity request:', error);
   }
 
-  const directResponse = await fetch(directUrl);
+  const directResponse = await fetch(directUrl, {
+    headers: { Accept: 'application/json' }
+  });
   if (!directResponse.ok) {
     throw new Error(`Direct Sanity request failed with status ${directResponse.status}`);
   }
