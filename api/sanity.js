@@ -2,7 +2,7 @@ module.exports = async function handler(req, res) {
   const type = req.query.type || 'content';
   const projectId = process.env.SANITY_PROJECT_ID || 'pnnengxa';
   const dataset = process.env.SANITY_DATASET || 'production';
-  const apiVersion = process.env.SANITY_API_VERSION || '2021-10-21';
+  const apiVersion = process.env.SANITY_API_VERSION || 'v2024-01-01';
 
   let query = '*[_type == "salonInfo"][0]';
   if (type === 'lookbook') {

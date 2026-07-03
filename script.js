@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // Sanity gegevens via Vercel API proxy met lokale fallback
 const PROJECT_ID = 'pnnengxa';
 const DATASET = 'production';
-const API_VERSION = '2021-10-21';
+const API_VERSION = 'v2024-01-01';
 
 async function fetchSanityData(type) {
   const query = type === 'lookbook'
